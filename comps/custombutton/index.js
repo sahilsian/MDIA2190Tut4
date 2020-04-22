@@ -7,11 +7,12 @@ className="custom_button_box"
 onClick={onClick}>
     <div className="custom_button_box_inner">
         {text}
+        
     </div>
 </div>
 
 function ButtonClick() {
-    alert("Clicked");
+    return null;
 }
 
 CustomButton.defaultProps = {

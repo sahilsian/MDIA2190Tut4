@@ -1,9 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import Router from 'next/router';
 import './chatpage.css';
 import Chat from '../../comps/chat';
 import CustomButton from '../../comps/custombutton';
 import Header from '../../comps/Header';
 import Input from '../../comps/input';
+
+import { IoMdHappy } from 'react-icons/io'
 /*
 var welcome_state = "Welcome to my App!"
 function setWelcome() {
@@ -18,7 +21,19 @@ const ChatPage = ({}) => {
     const  [msg, setMsg] = useState("Please type something!");
     const [resp, setResp] = useState("Let me respond to you!")
 
-    return <div> 
+    useEffect(()=>{
+        setTimeout(()=>{
+            document.querySelector("#chatpage").style.left = 0;
+        }, 300);
+        
+    }, []);
+
+    function clickIndex(){
+        Router.back()
+    }
+    
+
+    return <div id="chatpage"> 
     <div id="welcome">
         <Header fontSize={32} text={welcome} />
     </div>
@@ -26,6 +41,7 @@ const ChatPage = ({}) => {
         setWelcome("Start with sending a message.");
     }}>
         <Chat name={"User 1"} msg={msg} />
+        
         <p />
         <Chat img={"https://cdn2.iconfinder.com/data/icons/hobby-butterscotch-vol-1/512/Building_Robots-512.png"} name={"Chat Bot"} msg={resp} backgroundColor={"#FAB"} />
     </div>
@@ -40,6 +56,7 @@ const ChatPage = ({}) => {
             }*/
         }} />
     </div>
+    <CustomButton text="Back" color="#32a881" onClick={clickIndex}/>
 
 </div>
 }

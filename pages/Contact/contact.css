@@ -1,5 +1,6 @@
-#chatpage {
+#contactpage {
     position: relative;
     left: -100%;
     transition: left 1s;
+
 }
